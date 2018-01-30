@@ -41,13 +41,9 @@
 		current.setAbortAction(true);
 	}
 	
-	// Challenge:  Do not allow same-day requests
-	// Get the date portion of rightnow and whenNeeded (no timestamp)
-	var today = rightnow.getLocalDate();
-	var istoday = whenNeeded.getLocalDate();
+	var isToday = niutils.isDateToday(current.u_when_needed);
 	
-	// Compare today and istoday to see if they are the same day
-	if(today.compareTo(istoday) == 0){
+	if(isToday == true){
 		gs.addErrorMessage("You cannot submit NeedIt requests for today.");
 		current.setAbortAction(true);
 	}
@@ -59,7 +55,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4b6a58844f401300fbfd1b818110c7db</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>NeedIt When needed field date</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
@@ -67,7 +63,7 @@
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_script_4b6a58844f401300fbfd1b818110c7db</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-29 23:44:29</sys_updated_on>
+        <sys_updated_on>2018-01-30 01:08:27</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
